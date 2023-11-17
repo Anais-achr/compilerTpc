@@ -12,6 +12,7 @@ int colno = 1;
 %x COMMENT_MULTILINES
 
 %%
+[ \t]+ ;
 
 "="|"!"|";"|","|"("|")"|"{"|"}"|"["|"]"   { return yytext[0]; }
 
@@ -47,4 +48,5 @@ void       { return VOID; }
 <COMMENT_MULTILINES>\n { lineno++; colno = 1; }
 <COMMENT_MULTILINES>. ;
 <COMMENT_MULTILINES>"*/" { BEGIN INITIAL; }
+
 %%

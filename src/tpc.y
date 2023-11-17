@@ -89,7 +89,7 @@ F   :  ADDSUB F
     ;
 LValue:
        IDENT
-    |  IDENT '[' Exp ']'
+    |  IDENT '[' NUM ']'
     ;
 Arguments:
        ListExp
