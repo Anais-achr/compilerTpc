@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/anaisaoucher/Documents/GitHub/compilerTpc/tests",
+      "program": "/Users/anaisaoucher/Documents/GitHub/compilerTpc/tests/build/Debug/outDebug"
+    }
+  ]
+}

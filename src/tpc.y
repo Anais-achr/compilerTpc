@@ -14,6 +14,7 @@ Prog:  DeclVars DeclFoncts
     ;
 DeclVars:
        DeclVars TYPE Declarateurs ';'
+    |  DeclVars TYPE Declarateurs '[' NUM ']' ';'
     |
     ;
 Declarateurs:
@@ -37,7 +38,7 @@ Parametres:
     ;
 ListTypVar:
        ListTypVar ',' TYPE IDENT
-    |  TYPE IDENT
+    |  TYPE IDENT'[' ']'
     ;
 Corps: '{' DeclVars SuiteInstr '}'
     ;
@@ -47,10 +48,12 @@ SuiteInstr:
     ;
 Instr:
        LValue '=' Exp ';'
+    |  LValue '=' Exp '[' Exp ']' ';'
     |  IF '(' Exp ')' Instr
     |  IF '(' Exp ')' Instr ELSE Instr
     |  WHILE '(' Exp ')' Instr
     |  IDENT '(' Arguments  ')' ';'
+    |  IDENT '[' Exp ']' Instr 
     |  RETURN Exp ';'
     |  RETURN ';'
     |  '{' SuiteInstr '}'
@@ -81,9 +84,11 @@ F   :  ADDSUB F
     |  CHARACTER
     |  LValue
     |  IDENT '(' Arguments  ')'
+    |  IDENT '[' Exp ']'
     ;
 LValue:
        IDENT
+    |  IDENT '[' Exp ']'
     ;
 Arguments:
        ListExp
