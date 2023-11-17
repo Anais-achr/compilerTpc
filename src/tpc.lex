@@ -12,7 +12,6 @@ int colno = 1;
 %x COMMENT_MULTILINES
 
 %%
-[ \t]+ ;
 
 "="|"!"|";"|","|"("|")"|"{"|"}"|"["|"]"   { return yytext[0]; }
 
