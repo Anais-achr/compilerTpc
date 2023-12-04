@@ -1,7 +1,7 @@
-EXEC=tpc
+EXEC=tpcas
 CC=gcc
 CFLAGS=-Wall -g
-LDFLAGS= -ll -ly
+LDFLAGS= -ll -lfl
 
 BIN_DIR=bin/
 OBJ_DIR=obj/
